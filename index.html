@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NBA 2K20 Download</title>
+  <title>Game Downloads</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -80,31 +80,41 @@
 </head>
 <body>
 
+  <!-- NBA 2K20 Card -->
   <div class="card">
-    <!-- NBA 2K20 Logo -->
     <img src="https://logos-world.net/wp-content/uploads/2024/01/NBA-2K-Logo.png" alt="NBA 2K20 Logo" class="game-logo">
-
     <h2>NBA 2K20 APK</h2>
     <p>This is NBA 2K20 APK. Download now for smooth gameplay and exciting new features!</p>
-    <a href="https://cdn700.onehost.io/customs/NBA_2K20_v9802_MOD_1695365060.apk?__cf_chl_tk=VTjhbiLEZd1_UZy0p0wpo1fJ9HaYE06Hu_5eSa90Pm0-1756549476-1.0.1.1-xIAYCsni2Lzp5dVQDG44AZlPNqftlcrFHCZ8Wk0ZPu0" 
-       class="download-btn" id="downloadBtn">Download Now</a>
+    <a href="https://cdn700.onehost.io/customs/NBA_2K20_v9802_MOD_1695365060.apk?__cf_chl_tk=VTjhbiLEZd1_UZy0p0wpo1fJ9HaYE06Hu_5eSa90Pm0-1756549476-1.0.1.1-xIAYCsni2Lzp5dVQDG44AZlPNqftlcrFHCZ8Wk0ZPu0" class="download-btn" id="downloadBtn1">Download Now</a>
     <p class="file-size">File size: 3.19 GB</p>
   </div>
 
+  <!-- GTA San Andreas Card -->
+  <div class="card">
+    <img src="https://images.seeklogo.com/logo-png/48/1/gta-san-andreas-logo-png_seeklogo-481167.png" alt="GTA San Andreas Logo" class="game-logo">
+    <h2>GTA San Andreas APK</h2>
+    <p>Experience the classic GTA San Andreas with enhanced graphics and features!</p>
+    <a href="https://dl.apkvision.org/gta-san-andreas-definitive/GTA-SA-DE-1.86.44544238-full-apkvision.apks" class="download-btn" id="downloadBtn2">Download Now</a>
+    <p class="file-size">File size: 2.5 GB</p>
+  </div>
+
   <script>
-    const btn = document.getElementById('downloadBtn');
-    btn.addEventListener('click', function(e){
-      e.preventDefault(); // prevent immediate navigation
+    function setupDownloadButton(buttonId, downloadUrl) {
+      const btn = document.getElementById(buttonId);
+      btn.addEventListener('click', function(e) {
+        e.preventDefault(); // prevent immediate navigation
+        btn.innerHTML = 'Loading <span class="spinner"></span>';
+        btn.style.pointerEvents = 'none'; // disable button while loading
+        setTimeout(() => {
+          window.location.href = downloadUrl;
+        }, 2000); // 2 seconds loading
+      });
+    }
 
-      // Palitan ang text ng button at idagdag spinner
-      btn.innerHTML = 'Loading <span class="spinner"></span>';
-      btn.style.pointerEvents = 'none'; // disable button habang loading
-
-      // Pagkatapos ng 2 seconds, simulan ang download
-      setTimeout(() => {
-        window.location.href = btn.href;
-      }, 2000);
-    });
+    // Initialize download buttons
+    setupDownloadButton('downloadBtn1', 'https://cdn700.onehost.io/customs/NBA_2K20_v9802_MOD_1695365060.apk?__cf_chl_tk=VTjhbiLEZd1_UZy0p0wpo1fJ9HaYE06Hu_5eSa90Pm0-1756549476-1.0.1.1-xIAYCsni2Lzp5dVQDG44AZlPNqftlcrFHCZ8Wk0ZPu0');
+    setupDownloadButton('downloadBtn2', 'https://dl.apkvision.org/gta-san-andreas-definitive/GTA-SA-DE-1.86.44544238-full-apkvision.apks');
   </script>
+
 </body>
 </html>
