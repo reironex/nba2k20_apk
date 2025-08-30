@@ -37,10 +37,9 @@
       color: #333;
     }
     /* Realistic button style */
-    .download-btn {
+    .download-btn, .follow-btn {
       display: inline-block;
       padding: 14px 32px;
-      background: linear-gradient(145deg, #e53935, #d32f2f);
       color: #fff;
       text-decoration: none;
       font-size: 18px;
@@ -50,9 +49,22 @@
       transition: all 0.2s ease-in-out;
       position: relative;
       overflow: hidden;
+      margin-top: 10px;
+    }
+    .download-btn {
+      background: linear-gradient(145deg, #e53935, #d32f2f);
     }
     .download-btn:hover {
       background: linear-gradient(145deg, #d32f2f, #b71c1c);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.35), 0 4px 6px rgba(0,0,0,0.25) inset;
+    }
+    .follow-btn {
+      background: #4267B2;
+      margin-top: 20px;
+    }
+    .follow-btn:hover {
+      background: #365899;
       transform: translateY(-2px) scale(1.02);
       box-shadow: 0 8px 16px rgba(0,0,0,0.35), 0 4px 6px rgba(0,0,0,0.25) inset;
     }
@@ -76,6 +88,11 @@
       font-weight: bold;
       color: #444;
     }
+    .credit {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -92,10 +109,16 @@
   <!-- GTA San Andreas Card -->
   <div class="card">
     <img src="https://images.seeklogo.com/logo-png/48/1/gta-san-andreas-logo-png_seeklogo-481167.png" alt="GTA San Andreas Logo" class="game-logo">
-    <h2>GTA San Andreas (The Definitive Edition) APK</h2>
+    <h2>GTA San Andreas APK</h2>
     <p>Experience the classic GTA San Andreas with enhanced graphics and features!</p>
     <a href="https://dl.apkvision.org/gta-san-andreas-definitive/GTA-SA-DE-1.86.44544238-full-apkvision.apks" class="download-btn" id="downloadBtn2">Download Now</a>
     <p class="file-size">File size: 6.84 GB</p>
+  </div>
+
+  <!-- Credit and Follow Button -->
+  <div class="credit">
+    <p>Made by Neito Qui</p>
+    <a href="https://www.facebook.com/neitooonexxs" target="_blank" class="follow-btn">Follow Me</a>
   </div>
 
   <script>
