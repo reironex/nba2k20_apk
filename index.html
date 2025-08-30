@@ -36,20 +36,41 @@
       font-size: 15px;
       color: #333;
     }
+    /* Realistic button style */
     .download-btn {
       display: inline-block;
-      padding: 12px 28px;
-      background: #e53935;
+      padding: 14px 32px;
+      background: linear-gradient(145deg, #e53935, #d32f2f);
       color: #fff;
       text-decoration: none;
       font-size: 18px;
-      border-radius: 8px;
-      transition: background 0.3s ease, transform 0.2s ease;
-      margin: 15px 0;
+      font-weight: bold;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3), 0 4px 6px rgba(0,0,0,0.2) inset;
+      transition: all 0.2s ease-in-out;
+      position: relative;
+      overflow: hidden;
     }
     .download-btn:hover {
-      background: #b71c1c;
-      transform: scale(1.05);
+      background: linear-gradient(145deg, #d32f2f, #b71c1c);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.35), 0 4px 6px rgba(0,0,0,0.25) inset;
+    }
+    /* Spinner animation */
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-top: 3px solid #fff;
+      border-radius: 50%;
+      display: inline-block;
+      animation: spin 1s linear infinite;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
     }
     .file-size {
       font-weight: bold;
@@ -66,8 +87,25 @@
     <h2>NBA 2K20 APK</h2>
     <p>This is NBA 2K20 APK. Download now for smooth gameplay and exciting new features!</p>
     <a href="https://cdn700.onehost.io/customs/NBA_2K20_v9802_MOD_1695365060.apk?__cf_chl_tk=VTjhbiLEZd1_UZy0p0wpo1fJ9HaYE06Hu_5eSa90Pm0-1756549476-1.0.1.1-xIAYCsni2Lzp5dVQDG44AZlPNqftlcrFHCZ8Wk0ZPu0" 
-       class="download-btn">Download Now</a>
+       class="download-btn" id="downloadBtn">Download Now</a>
     <p class="file-size">File size: 3.19 GB</p>
   </div>
+
+  <script>
+    const btn = document.getElementById('downloadBtn');
+    btn.addEventListener('click', function(e){
+      e.preventDefault(); // prevent immediate navigation
+
+      // Palitan ang text ng button at idagdag spinner
+      btn.innerHTML = 'Loading <span class="spinner"></span>';
+      btn.style.pointerEvents = 'none'; // disable button habang loading
+
+      // Pagkatapos ng 2 seconds, simulan ang download
+      setTimeout(() => {
+        window.location.href = btn.href;
+      }, 2000);
+    });
+  </script>
+
 </body>
 </html>
